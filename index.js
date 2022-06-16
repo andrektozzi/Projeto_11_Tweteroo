@@ -14,4 +14,14 @@ server.post("/sign-up", (req, res) => {
     res.send("OK");
 });
 
+server.post("/tweets", (req, res) => {
+    const user = req.body
+    const tweet = {
+        username: user.username,
+        tweet: user.tweet
+    }
+    tweets.push(tweet);
+    res.send("OK");
+})
+
 server.listen(5000);
